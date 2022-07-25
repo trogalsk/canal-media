@@ -13,12 +13,12 @@ interface IRootProps {
 export const Root: React.FC<IRootProps> = ({ children }) => {
   const dispatch = useAppDispatch();
   const configuration = useAppSelector(
-    (state: AppState) => state.configuration.configuration
+    (state: AppState) => state.configuration.configuration,
   );
 
   const getConfiguration = useCallback(
     () => dispatch(ConfigurationStore.getConfiguration()),
-    [dispatch]
+    [dispatch],
   );
 
   useEffect(() => {

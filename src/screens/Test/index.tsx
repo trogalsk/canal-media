@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Counter } from "../../components";
 
-import styles from './index.module.css'
+import styles from "./index.module.css";
 
 export default function HomeScreen() {
   return (
@@ -56,12 +56,12 @@ export default function HomeScreen() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }

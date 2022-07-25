@@ -12,6 +12,6 @@ export interface IConfigurationModel {
     poster_sizes?: string[];
     profile_sizes?: string[];
     still_sizes?: string[];
-  },
+  };
   change_keys?: string[];
 }

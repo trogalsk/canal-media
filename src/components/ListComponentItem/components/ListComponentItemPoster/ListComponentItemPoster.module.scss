@@ -9,7 +9,6 @@
   cursor: default;
 }
 
-
 .container {
   position: relative;
   cursor: pointer;
@@ -27,7 +26,6 @@
 }
 
 :global(.slick-slide) {
-
   .container,
   .containerSkeleton {
     margin: 0 15px 0 0;

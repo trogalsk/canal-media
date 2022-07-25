@@ -196,7 +196,7 @@
     @content;
   }
 }
- // Disable required double click on safari to fire the button event
+// Disable required double click on safari to fire the button event
 @mixin hover {
   @media (hover) {
     @content;

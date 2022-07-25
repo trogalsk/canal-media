@@ -1,14 +1,14 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-import { useAppSelector, useAppDispatch, MediaStore } from '../../store'
-import styles from './Counter.module.css'
+import { useAppSelector, useAppDispatch, MediaStore } from "../../store";
+import styles from "./Counter.module.css";
 
 export const Counter = () => {
-  const dispatch = useAppDispatch()
-  const count = useAppSelector(MediaStore.selectCount)
-  const [incrementAmount, setIncrementAmount] = useState('2')
+  const dispatch = useAppDispatch();
+  const count = useAppSelector(MediaStore.selectCount);
+  const [incrementAmount, setIncrementAmount] = useState("2");
 
-  const incrementValue = Number(incrementAmount) || 0
+  const incrementValue = Number(incrementAmount) || 0;
 
   return (
     <div>
@@ -44,7 +44,9 @@ export const Counter = () => {
         </button>
         <button
           className={styles.asyncButton}
-          onClick={() => dispatch(MediaStore.getMovieList({mediaListId: "xxx"}))}
+          onClick={() =>
+            dispatch(MediaStore.getMovieList({ mediaListId: "xxx" }))
+          }
         >
           Add Async
         </button>
@@ -56,5 +58,5 @@ export const Counter = () => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};

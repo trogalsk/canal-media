@@ -20,7 +20,7 @@ export const ListComponentItem = ({
   width = -1,
   index,
   style,
-  imageSize
+  imageSize,
 }: IListComponentItemProps) => {
   const renderView = () => {
     const itemKey = `list-item-${index}_${media ? media.id : ""}`;

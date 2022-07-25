@@ -20,7 +20,7 @@ export const ListComponentItemPoster = ({
   imageSize = "w185",
 }: IListComponentItemProps) => {
   const configuration = useAppSelector(
-    (state: AppState) => state.configuration.configuration
+    (state: AppState) => state.configuration.configuration,
   );
   const router = useRouter();
   const imageUrl = `${configuration?.images?.base_url}${imageSize}${media?.poster_path}`;
@@ -44,10 +44,7 @@ export const ListComponentItemPoster = ({
   }
 
   return (
-    <div
-      className={cx(styles.item)}
-      onClick={goToMedia}
-    >
+    <div className={cx(styles.item)} onClick={goToMedia}>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
           <ImageWithPlaceholder

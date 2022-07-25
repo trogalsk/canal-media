@@ -41,7 +41,7 @@ export const GridComponent: React.FC<IGridComponentProps> = ({
   cellType = CellType.Frame,
   mediaList = [],
   style,
-  title
+  title,
 }: IGridComponentProps) => {
   const chunk = (array: IMovieModel[] | undefined, size = 1) => {
     if (!array) {

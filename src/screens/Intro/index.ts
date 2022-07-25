@@ -5,4 +5,4 @@
  */
 import { IntroScreen as IntroScreenDefinition } from "./IntroScreen";
 
-export const IntroScreen = IntroScreenDefinition
+export const IntroScreen = IntroScreenDefinition;

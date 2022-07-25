@@ -7,6 +7,6 @@ export interface IErrorModel {
   status?: number;
 
   code?: string;
-  
+
   message?: string;
 }

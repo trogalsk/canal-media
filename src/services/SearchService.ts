@@ -11,14 +11,15 @@ export class SearchService {
     return "/3/search";
   }
 
-  public searchMovie = async (filter: IMovieFilterModel = {}): Promise<IMovieListModel> => {
+  public searchMovie = async (
+    filter: IMovieFilterModel = {},
+  ): Promise<IMovieListModel> => {
     const httpClient = new HttpClient();
 
-    const {
-      page = 1,
-      query = ""
-    } = filter;
+    const { page = 1, query = "" } = filter;
 
-    return httpClient.get<IMovieListModel>(`${this.url}/movie?page=${page}&query=${query}`);
-  }
+    return httpClient.get<IMovieListModel>(
+      `${this.url}/movie?page=${page}&query=${query}`,
+    );
+  };
 }

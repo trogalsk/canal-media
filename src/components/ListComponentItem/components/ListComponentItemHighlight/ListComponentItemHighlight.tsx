@@ -21,7 +21,7 @@ export const ListComponentItemHighlight = ({
   isPlaceholder,
 }: IListComponentItemHighlightProps) => {
   const configuration = useAppSelector(
-    (state: AppState) => state.configuration.configuration
+    (state: AppState) => state.configuration.configuration,
   );
   const renderSkeleton = useMemo(() => {
     if (!media) {
@@ -65,7 +65,7 @@ export const ListComponentItemHighlight = ({
 
   return (
     <Link href={RouteHelper.getDetailsPath(media)}>
-    <a className={styles.item} id="highlightListItem">
+      <a className={styles.item} id="highlightListItem">
         <ImageWithRatio
           isSpinner={false}
           key={media?.id}
@@ -77,11 +77,7 @@ export const ListComponentItemHighlight = ({
             <div className={styles.content}>
               <h1 className={styles.title}>{media?.title}</h1>
               <div className={styles.infoContainer}>
-                <p
-                  className={styles.description}
-                >
-                  {media.overview}
-                </p>
+                <p className={styles.description}>{media.overview}</p>
               </div>
             </div>
           </div>

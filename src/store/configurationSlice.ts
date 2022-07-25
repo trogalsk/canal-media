@@ -18,7 +18,7 @@ export const getConfiguration = createAsyncThunk<IConfigurationModel>(
   "configuration/get",
   async () => {
     return configurationService.get();
-  }
+  },
 );
 
 export const configurationSlice = createSlice({

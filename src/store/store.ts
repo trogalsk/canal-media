@@ -5,9 +5,9 @@ import configurationReducer from "./configurationSlice";
 
 export function createStore() {
   return configureStore({
-    reducer: { 
+    reducer: {
       media: mediaReducer,
-      configuration: configurationReducer
+      configuration: configurationReducer,
     },
   });
 }

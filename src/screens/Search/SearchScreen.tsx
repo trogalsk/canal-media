@@ -25,7 +25,7 @@ export const SearchScreen = () => {
   const queryString = params.query?.toString();
   const pageNumber = +(params.page || 1);
   const mediaSearch = useAppSelector<IMovieListStateModel>(
-    (store) => store.media.mediaSearch
+    (store) => store.media.mediaSearch,
   );
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export const SearchScreen = () => {
             page: pageNumber,
             query: queryString,
           },
-        })
+        }),
       );
     }
   }, [params]);
@@ -55,7 +55,7 @@ export const SearchScreen = () => {
         },
       },
       undefined,
-      { shallow: true }
+      { shallow: true },
     );
   };
 

@@ -15,5 +15,5 @@ export class ConfigurationService {
     const httpClient = new HttpClient();
 
     return httpClient.get<IConfigurationModel>(this.url);
-  }
+  };
 }

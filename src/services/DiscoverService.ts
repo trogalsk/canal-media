@@ -11,14 +11,15 @@ export class DiscoverService {
     return "/3/discover";
   }
 
-  public getMovieList = async (filter: IMovieFilterModel = {}): Promise<IMovieListModel> => {
+  public getMovieList = async (
+    filter: IMovieFilterModel = {},
+  ): Promise<IMovieListModel> => {
     const httpClient = new HttpClient();
 
-    const {
-      page = 1,
-      sort_by = "popularity.desc"
-    } = filter;
+    const { page = 1, sort_by = "popularity.desc" } = filter;
 
-    return httpClient.get<IMovieListModel>(`${this.url}/movie?page=${page}&sort_by=${sort_by}`);
-  }
+    return httpClient.get<IMovieListModel>(
+      `${this.url}/movie?page=${page}&sort_by=${sort_by}`,
+    );
+  };
 }

@@ -39,7 +39,7 @@ export const SearchInput = () => {
             },
           },
           undefined,
-          { shallow: true }
+          { shallow: true },
         );
       } else {
         router.push({

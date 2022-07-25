@@ -19,7 +19,7 @@ export const ListComponentItemFrame = ({
   imageSize = "w300",
 }: IListComponentItemProps) => {
   const configuration = useAppSelector(
-    (state: AppState) => state.configuration.configuration
+    (state: AppState) => state.configuration.configuration,
   );
   const router = useRouter();
   const imageUrl = `${configuration?.images?.base_url}${imageSize}${media?.backdrop_path}`;

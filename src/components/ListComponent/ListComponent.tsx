@@ -46,7 +46,7 @@ export const ListComponent = ({
   imageSize,
 }: IListComponentProps) => {
   const mediaList = useAppSelector(
-    (state: AppState) => state.media.movieList[id]
+    (state: AppState) => state.media.movieList[id],
   ) || { results: [] };
   const dispatch = useAppDispatch();
 
@@ -58,9 +58,9 @@ export const ListComponent = ({
           filter: {
             page: pageNumber,
           },
-        })
+        }),
       ),
-    [dispatch]
+    [dispatch],
   );
 
   const [isListFocused, setIsListFocused] = useState(false);
@@ -88,7 +88,7 @@ export const ListComponent = ({
         getMediaList();
       }
     },
-    [getMediaList, id]
+    [getMediaList, id],
   );
 
   const renderItems = useMemo(() => {
@@ -142,7 +142,7 @@ export const ListComponent = ({
       };
       return { arrows, background };
     },
-    [sliderTouched]
+    [sliderTouched],
   );
 
   const arrowContainer = useCallback(
@@ -154,7 +154,7 @@ export const ListComponent = ({
         />
       ) : undefined;
     },
-    [isListFocused, getArrowContainerStyle]
+    [isListFocused, getArrowContainerStyle],
   );
 
   const renderHeader = useMemo(() => {
@@ -185,7 +185,11 @@ export const ListComponent = ({
     <InView
       as="div"
       id={`list-${id}`}
-      className={cx(styles.list, cellType === CellType.Highlights ? styles.listHighlights : null, className)}
+      className={cx(
+        styles.list,
+        cellType === CellType.Highlights ? styles.listHighlights : null,
+        className,
+      )}
       rootMargin="25% 0px"
       triggerOnce
       onChange={onChangeInView}

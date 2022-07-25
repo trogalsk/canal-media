@@ -8,7 +8,7 @@ import axios, {
 import { IApiErrorModel, IErrorModel } from "src/models";
 
 export const HttpRequestFulfilledInterceptor = (
-  config: AxiosRequestConfig
+  config: AxiosRequestConfig,
 ): Promise<AxiosRequestConfig> => {
   const apiKeyParam = `api_key=${process.env.NEXT_PUBLIC_API_KEY}`;
 
@@ -39,7 +39,7 @@ export class HttpClient {
 
     this.axiosInstance.interceptors.request.use(
       HttpRequestFulfilledInterceptor,
-      HttpRequestRejectedInterceptor
+      HttpRequestRejectedInterceptor,
     );
 
     this.cancelToken = axios.CancelToken.source();
@@ -47,7 +47,7 @@ export class HttpClient {
 
   public async get<T = any>(
     url: string,
-    config?: AxiosRequestConfig
+    config?: AxiosRequestConfig,
   ): Promise<T> {
     const cfg = this.mergeConfig(config);
 
@@ -75,9 +75,7 @@ export class HttpClient {
     };
   }
 
-  private getError(
-    axiosError: AxiosError<IApiErrorModel>
-  ): IErrorModel {
+  private getError(axiosError: AxiosError<IApiErrorModel>): IErrorModel {
     const error: IErrorModel = {
       message: axiosError.message,
     };

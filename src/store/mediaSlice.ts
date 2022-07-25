@@ -54,7 +54,7 @@ export const getMovie = createAsyncThunk<IMovieModel, { id: number }>(
   "media/get",
   async (payload) => {
     return movieService.get(payload.id);
-  }
+  },
 );
 
 export const mediaSlice = createSlice({

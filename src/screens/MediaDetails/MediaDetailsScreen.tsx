@@ -30,7 +30,7 @@ export const MediaDetailsScreen = () => {
   const mediaState = useAppSelector((state: AppState) => state.media.media);
   const media = mediaState.data?.id === mediaId ? mediaState.data : undefined;
   const configuration = useAppSelector(
-    (state: AppState) => state.configuration.configuration
+    (state: AppState) => state.configuration.configuration,
   );
 
   useEffect(() => {
@@ -79,7 +79,9 @@ export const MediaDetailsScreen = () => {
           <div className={styles.mediaMainInfo}>
             <h1>{media.title}</h1>
             {media?.genres && !!media.genres.length && (
-              <p className={styles.genre}>{media.genres.map((genre) => genre.name).join(", ")}</p>
+              <p className={styles.genre}>
+                {media.genres.map((genre) => genre.name).join(", ")}
+              </p>
             )}
           </div>
 

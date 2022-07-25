@@ -5,6 +5,6 @@
  */
 export interface IApiErrorModel {
   status_message?: string;
-  
+
   status_code?: string;
 }
