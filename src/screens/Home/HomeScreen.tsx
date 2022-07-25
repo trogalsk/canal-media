@@ -10,7 +10,7 @@ export const HomeScreen = () => {
       <main>
         <div className={styles.listsSection}>
           <ListComponent id="0" cellType={CellType.Highlights} cellCount={1} />
-          <ListComponent id="1" title="Most popular" />
+          <ListComponent id="1" title="Most popular" cellCount={4} />
           <ListComponent
             id="2"
             title="Movies"

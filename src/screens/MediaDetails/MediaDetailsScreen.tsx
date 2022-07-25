@@ -47,15 +47,21 @@ export const MediaDetailsScreen = () => {
 
   const renderContent = () => {
     if (mediaState.pending) {
-      return <LoaderSpinner className={styles.loader} />;
+      return (
+        <div className={styles.content}>
+          <LoaderSpinner className={styles.loader} />
+        </div>
+      );
     }
 
     if (mediaState.error || !media) {
       return (
-        <>
-          <h2>App encountered some problems during load media details</h2>
-          <p>{mediaState.error?.message}</p>
-        </>
+        <div className={styles.content}>
+          <div className={styles.error}>
+            <h2>App encountered some problems during load media details</h2>
+            <p>{mediaState.error?.message}</p>
+          </div>
+        </div>
       );
     }
 
@@ -84,18 +90,6 @@ export const MediaDetailsScreen = () => {
               </p>
             )}
           </div>
-
-          {/* <div className={styles.playInfoWrapper}>
-                <MediaDetailsPlayInfo canWatch={canWatch} isMobile={isMobile} />
-              </div>
-              
-
-              <MediaDetailsCoverImg
-                className={styles.coverImg}
-                images={media?.Images}
-                altText={media?.Title}
-              />
-              <MediaDetailsTopContent isLoggedIn={isLoggedIn} media={media} /> */}
         </div>
         <div className={styles.mediaAdditionalInfo}>
           <p className={styles.description}>{media.overview}</p>

@@ -204,7 +204,7 @@ export const ListComponent = ({
           className={cx({ ["cover-list"]: cellType === CellType.Poster })}
           slidesToShow={cellCount}
           slidesToScroll={cellCount - 1}
-          draggable={true}
+          draggable={false}
           infinite={sliderTouched || cellType === CellType.Highlights}
           afterChange={handleSliderTouched}
           prevArrow={arrowContainer("left")}

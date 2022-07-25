@@ -56,7 +56,13 @@ export const ListComponentItemFrame = ({
             imageContainerClassName={styles.image}
             placeholderSrc={placeholder.src}
           />
-          <div className={styles.content}></div>
+          <div className={styles.content}>
+            <div className={styles.titleContainer}>
+              <div className={styles.titleWrapper}>
+                <div className={styles.title}>{media.title}</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

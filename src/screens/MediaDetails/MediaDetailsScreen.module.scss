@@ -9,10 +9,27 @@
   color: $primary-text;
 }
 
+.content {
+  position: relative;
+  display: flex;
+  flex: 1;
+}
+
 .loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   margin: 64px auto;
+}
+
+.error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .main {
