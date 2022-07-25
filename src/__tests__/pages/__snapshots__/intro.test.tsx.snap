@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Intro renders intro unchanged 1`] = `
+<div>
+  <div
+    class="Container"
+  >
+    <div
+      class="Gradient"
+    />
+    <img
+      alt="Canal media"
+      class="Logo"
+      src="/logo.png"
+    />
+    <div
+      class="Content"
+    >
+      <div
+        class="Info"
+      >
+        <h1>
+          Unlimited movies, TV shows, and more.
+        </h1>
+        <h2>
+          Watch anywhere. Cancel anytime.
+        </h2>
+        <h3
+          class="H3"
+        >
+          Ready to watch?
+        </h3>
+        <button
+          class="Button"
+          href="/home"
+        >
+          Get started
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
