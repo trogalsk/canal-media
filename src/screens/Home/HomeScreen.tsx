@@ -1,7 +1,7 @@
 import { CellType } from "../../enums";
 import { AppHeader, AppFooter, ListComponent } from "../../components";
 
-import styles from "./HomeScreen.module.css";
+import styles from "./HomeScreen.module.scss";
 
 export const HomeScreen = () => {
   return (
