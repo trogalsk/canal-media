@@ -1,0 +1,27 @@
+{
+  "root": true,
+  "extends": [
+    "plugin:@next/next/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"],
+  "plugins": [
+    "prettier",
+    "testing-library",
+    "@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/no-var-requires": "off",
+    "@next/next/no-img-element": "off"
+    // "@typescript-eslint/no-unused-vars": "error",
+    //"@typescript-eslint/no-explicit-any": "error"
+  },
+  "overrides": [
+    // Only uses Testing Library lint rules in test files
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ]
+}

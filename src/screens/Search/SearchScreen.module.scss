@@ -1,0 +1,45 @@
+@import "../../styles/variables";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  color: $primary-text;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  margin: 64px auto;
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+  padding: 64px 24px 0;  
+  text-align: center;
+
+  & > div {
+    width: 100%;
+  }
+}
+
+.button {
+  background-color: $primary;
+  color: $primary-text;
+  cursor: pointer;
+  border: none;
+  width: 160px;
+  height: 48px;
+  box-shadow: black 0 3px 10px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 18px;
+  opacity: 1;
+
+  &:not(:disabled):not(.disabled):hover,
+  &:not(:disabled):not(.disabled):active {
+    opacity: 0.7;
+  }
+}

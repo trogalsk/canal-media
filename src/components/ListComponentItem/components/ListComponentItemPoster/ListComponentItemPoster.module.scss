@@ -1,0 +1,89 @@
+@import "../../../../styles/utils";
+
+.item {
+  margin: 0;
+  padding: 0;
+}
+
+.isOutOfView .container {
+  cursor: default;
+}
+
+
+.container {
+  position: relative;
+  cursor: pointer;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #110c49 0%, #070523 100%);
+}
+
+.containerSkeleton {
+  position: relative;
+  border-radius: 4px;
+}
+
+.itemSkeleton {
+  padding-top: 133.33%;
+}
+
+:global(.slick-slide) {
+
+  .container,
+  .containerSkeleton {
+    margin: 0 15px 0 0;
+
+    @include large() {
+      margin: 0 12px 0 0;
+    }
+
+    @include desktopDown() {
+      margin: 0 10px 0 0;
+    }
+
+    @include phone() {
+      margin: 0 7px 0 0;
+    }
+  }
+}
+
+.imageContainer {
+  position: relative;
+  padding-top: 133.33%;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  img {
+    border-radius: 4px;
+  }
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.infoTrigger {
+  transition: all 0.2s;
+  font-size: 1.5rem;
+}
+
+.info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: all 0.2s;
+}

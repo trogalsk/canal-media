@@ -1,0 +1,127 @@
+@import "../../../../styles/utils";
+
+.item {
+  transition: all 0.2s;
+  animation: showItem 0.3s ease-in;
+}
+
+.isOutOfView .container {
+  cursor: default;
+}
+
+.container {
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #110c49 0%, #070523 100%);
+}
+
+:global(.slick-slide) {
+
+  .item,
+  .containerSkeleton {
+    margin: 0 12px 0 0;
+
+    @include large() {
+      margin: 0 10px 0 0;
+    }
+
+    @include desktopDown() {
+      margin: 0 9px 0 0;
+    }
+
+    @include phone() {
+      margin: 0 7px 0 0;
+    }
+  }
+
+  .largeFrame {
+    margin: 0 24px 0 0;
+
+    @include tablet() {
+      margin: 0 18px 0 0;
+    }
+
+    @include phone() {
+      margin: 0 14px 0 0;
+    }
+  }
+}
+
+.imageContainer {
+  position: relative;
+  padding-top: 56.25%;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  img {
+    object-fit: cover;
+    border-radius: 4px;
+  }
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.titleContainer {
+  padding: 20px;
+}
+
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  opacity: 0.87;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+}
+
+.infoTrigger {
+  transition: all 0.2s;
+  cursor: pointer;
+  font-size: 1.5rem;
+
+  svg {
+    display: block;
+  }
+}
+
+.info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.skeleton {
+  padding-top: 56.25%;
+}
+
+@keyframes showItem {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,73 @@
+@import "../../styles/utils";
+@import "../../styles/variables";
+
+.appFooter {
+  @include prevent-tab-highlights;
+  padding: 48px 110px 24px 64px;
+  color: $primary-text;
+  background-color: $bg-color;
+  width: 100%;
+  display: block; 
+  margin-top: 48px;
+  border-top: 1px solid #eaeaea;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logo {
+    width: 6.7rem;
+    height: 64px;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    @include phone {
+      display: none;
+    }
+  }
+
+  .columns {
+    width: 100%;
+    flex: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    @include desktop {
+      flex: 90%;
+    }
+
+    @include phone {
+      justify-content: center;
+    }
+
+    .column {
+      color: var(--primary-text-color);
+      text-align: right;
+      padding-left: 50px;
+      width: fit-content;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0;
+      line-height: 18px;
+
+      @include tablet {
+        padding-left: 25px;
+      }
+
+      @include phone {
+        padding: 10px;
+        margin: auto;
+      }
+    }
+    .column:not(:first-child) {
+      white-space: pre;
+    }
+    .columnDropdown {
+      min-width: 15%;
+    }
+  }
+}

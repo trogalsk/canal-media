@@ -1,0 +1,32 @@
+// color scheme
+$primary: #e51b23;
+$primary-text: #ffffff;
+$secondary: #233661;
+$secondary-text: #9d9d9d;
+$primary-bg: #101010;
+$secondary-bg: #101010;
+$disabled: #233661;
+$other: #1eb89b;
+$icon-color: #ffffff;
+$error-color: #d32f2f;
+$success-color: #4bb543;
+$bg-color: #070523;
+
+// ***** Breakpoints for Responsive Screen
+// width scale for phone
+$phone-max-width: 499px !default;
+// height scale for phone
+$phone-min-height: 346px !default;
+$phone-max-height: 695px !default;
+// width scale for tablet
+$tablet-min-width: 500px !default;
+$tablet-max-width: 849px !default;
+// height scale for tablet
+$tablet-min-height: 800px !default;
+$tablet-max-height: 1440px !default;
+// Desktop Scale
+$desktop-min-width: 850px !default;
+$desktop-max-width: 1100px !default;
+// Large Scale
+$large-min-width: 1100px !default;
+$large-max-width: 1399px !default;

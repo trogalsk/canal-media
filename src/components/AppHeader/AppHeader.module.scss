@@ -1,0 +1,39 @@
+@import "../../styles/utils";
+@import "../../styles/variables";
+
+.header {
+  @include prevent-tab-highlights;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100vw;
+  z-index: 1009;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  padding: 16px 48px 20px 24px;
+  background: $bg-color;
+  background-image: linear-gradient(to bottom, $bg-color, transparent);
+  transition: background 0.2s ease-out;
+
+  &.headerTop {
+    background: transparent;
+  }
+
+  .headerLeft {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .headerRight {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    justify-self: flex-end;
+    flex: 1;
+  }
+}

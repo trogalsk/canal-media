@@ -1,0 +1,254 @@
+@import "../../styles/utils";
+@import "../../styles/variables";
+
+.list {
+  overflow-anchor: none;
+  &:first-of-type {
+    padding-top: 48px;
+
+    @include phone() {
+      padding-top: 90px;
+    }
+  }
+
+  &:not(:first-of-type) [id$="highlightListItem"] > div > div > div {
+    &::before {
+      display: none;
+    }
+  }
+
+  &:not(:first-of-type) {
+    padding-top: 45px;
+
+    @include desktop() {
+      padding-top: 35px;
+    }
+
+    @include tablet() {
+      padding-top: 30px;
+    }
+
+    @include phone() {
+      padding-top: 20px;
+    }
+  }
+}
+
+.listHighlights {
+  display: block;
+
+  &:first-of-type {
+    padding-top: 0 !important;
+  }
+
+  :global {
+    .slick-list {
+      overflow: hidden !important;
+      margin: 0 !important;
+    }
+
+    .slider-control-bottomcenter {
+      width: 100%;
+      left: 0;
+      transform: none;
+    }
+  }
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 78px;
+  padding-right: 48px;
+  line-height: 4.25rem;
+
+  @include largeDown() {
+    line-height: 3.5rem;
+  }
+
+  @include desktopDown() {
+    padding-left: 50px;
+    padding-right: 30px;
+  }
+
+  @include phone() {
+    padding-left: 35px;
+    padding-right: 15px;
+    line-height: 4rem;
+  }
+}
+
+.title {
+  font-size: 1.5rem;
+  letter-spacing: 0;
+  font-weight: normal;
+  letter-spacing: 0;
+  color: $primary-text;
+}
+
+.seeAll {
+  @include prevent-tab-highlights;
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  line-height: 4.25rem;
+  padding-right: 14px;
+  opacity: 1;
+  transition: font-weight 0.3s;
+  font-weight: lighter;
+
+  &:hover {
+    font-weight: normal;
+  }
+
+  @include largeDown() {
+    line-height: 3.5rem;
+  }
+
+  @include tabletDown {
+    padding-right: 9px;
+  }
+
+  @include phone() {
+    line-height: 4rem;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+
+  @include phone() {
+    padding-left: 0;
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.list {
+  :global {
+    .slider {
+      overflow: hidden;
+    }
+
+    .slick-list {
+      overflow: visible;
+      margin: 0 230px 0 78px;
+
+      @include large {
+        margin: 0 180px 0 78px;
+      }
+
+      @include desktop {
+        margin: 0 145px 0 50px;
+      }
+
+      @include tablet {
+        margin: 0 110px 0 50px;
+      }
+
+      @include phone {
+        margin: 0 45px 0 35px;
+      }
+    }
+
+    .cover-list {
+      .slick-list {
+        margin: 0 105px 0 78px;
+
+        @include large {
+          margin: 0 90px 0 78px;
+        }
+
+        @include desktop {
+          margin: 0 75px 0 50px;
+        }
+
+        @include tablet {
+          margin: 0 45px 0 50px;
+        }
+
+        @include phone {
+          margin: 0 35px 0 35px;
+        }
+      }
+    }
+
+    .circle-list {
+      .slick-list {
+        margin: 0 115px 0 58px;
+
+        @include large {
+          margin: 0 95px 0 58px;
+        }
+
+        @include desktop {
+          margin: 0 75px 0 28px;
+        }
+
+        @include tablet {
+          margin: 0 55px 0 28px;
+        }
+
+        @include phone {
+          margin: 0 45px 0 15px;
+        }
+      }
+    }
+
+    .slick-track {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+
+    .slick-dots {
+      width: max-content;
+      left: 50%;
+      bottom: 72px;
+      transform: translateX(-50%);
+      text-align: center;
+      box-sizing: border-box;
+
+      @include phone {
+        display: none !important;
+      }
+
+      & > li,
+      & > li > button {
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+      }
+
+      & > li > button:before {
+        position: relative;
+        display: inline-block;
+        opacity: 0.6;
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        margin: 4px;
+        border-radius: 50%;
+        font-size: 0;
+        border: 0;
+        cursor: pointer;
+        background-color: $primary-text;
+      }
+
+      .slick-active > button:before {
+        opacity: 1;
+        background-color: $primary;
+      }
+    }
+    .slick-current {
+      z-index: 1;
+    }
+  }
+}

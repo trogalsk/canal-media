@@ -1,0 +1,204 @@
+@import "variables";
+
+// Mixins
+// For portrait phone and landscape phone
+@mixin phone() {
+  @media screen and (max-width: $phone-max-width) {
+    @content;
+  }
+}
+
+// For portrait phone
+@mixin phone-portrait() {
+  @media screen and (min-width: $phone-min-width) and (max-width: $phone-max-width) and (orientation: portrait) {
+    @content;
+  }
+}
+// For landscape phone
+@mixin phone-landscape() {
+  @media screen and (min-height: $phone-min-height) and (max-height: $phone-max-height) and (orientation: landscape) {
+    @content;
+  }
+}
+// For portrait tablet and landscape tablet
+@mixin tablet() {
+  @media screen and (min-width: $tablet-min-width) and (max-width: $tablet-max-width),
+    /* iPad PRO */ (min-width: $tablet-min-width) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5) and (orientation: portrait),
+    /* iPad Air */ (min-width: $tablet-min-width) and (max-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    @content;
+  }
+}
+@mixin tabletDown() {
+  @media screen and (max-width: $tablet-max-width),
+    /* iPad PRO */ (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5) and (orientation: portrait),
+    /* iPad Air */ (max-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    @content;
+  }
+}
+// For portrait tablet
+@mixin tablet-portrait() {
+  @media screen and (min-width: $tablet-min-width) and (max-width: $tablet-max-width) and (orientation: portrait) {
+    @content;
+  }
+}
+// For landscape tablet
+@mixin tablet-landscape() {
+  @media screen and (min-height: $tablet-min-height) and (max-height: $tablet-max-height) and (orientation: landscape) {
+    @content;
+  }
+}
+// For desktop
+@mixin desktop() {
+  @media screen and (min-width: $desktop-min-width) and (max-width: $desktop-max-width) {
+    @content;
+  }
+}
+@mixin desktopDown() {
+  @media screen and (max-width: $desktop-max-width) {
+    @content;
+  }
+}
+// Large
+@mixin largeDown() {
+  @media screen and (max-width: $large-max-width) {
+    @content;
+  }
+}
+@mixin large() {
+  @media screen and (min-width: $large-min-width) and (max-width: $large-max-width) {
+    @content;
+  }
+}
+
+@mixin multiLineEllipsis($lineHeight, $lineCount, $bgColor: "transparent") {
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount;
+  text-align: justify;
+  padding-right: 1em;
+
+  &:before {
+    content: "...";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}
+
+@mixin box-shadow($values...) {
+  -webkit-box-shadow: $values;
+  -moz-box-shadow: $values;
+  box-shadow: $values;
+}
+
+@mixin display-flex() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+
+@mixin display-algin($value) {
+  -webkit-flex-align: $value;
+  -ms-flex-align: $value;
+  -webkit-align-items: $value;
+  align-items: $value;
+  justify-content: $value;
+}
+
+@mixin flex-direction($value) {
+  flex-direction: $value;
+  -moz-flex-direction: $value;
+  -ms-flex-direction: $value;
+  -webkit-flex-direction: $value;
+}
+
+@mixin flex-flow($values) {
+  flex-flow: $values;
+  -moz-flex-flow: $values;
+  -ms-flex-flow: $values;
+  -webkit-flex-flow: $values;
+}
+
+@mixin prevent-tab-highlights {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin transform($values) {
+  -webkit-transform: $values;
+  -ms-transform: $values;
+  -moz-transform: $values;
+  -o-transform: $values;
+  transform: $values;
+}
+
+@mixin transition($values...) {
+  -webkit-transition: $values;
+  -moz-transition: $values;
+  -o-transition: $values;
+  transition: $values;
+}
+
+@mixin transition-transform($values...) {
+  -webkit-transition: -webkit-transform, $values;
+  -moz-transition: -moz-transform, $values;
+  -o-transition: -o-transform, $values;
+  transition: -ms-transform, $values;
+  transition: transform, $values;
+}
+
+@mixin pageBackgroundImage() {
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@mixin backgroundImage() {
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content;
+  }
+  :-moz-placeholder {
+    @content;
+  }
+  ::-moz-placeholder {
+    @content;
+  }
+  :-ms-input-placeholder {
+    @content;
+  }
+}
+ // Disable required double click on safari to fire the button event
+@mixin hover {
+  @media (hover) {
+    @content;
+  }
+}

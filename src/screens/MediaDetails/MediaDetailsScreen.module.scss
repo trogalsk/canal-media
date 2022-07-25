@@ -1,0 +1,235 @@
+@import "../../styles/utils";
+@import "../../styles/variables";
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  color: $primary-text;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  margin: 64px auto;
+}
+
+.main {
+  display: contents;
+  flex: 1;
+  width: 100%;
+
+  & > div {
+    width: 100%;
+  }
+}
+
+.mediaDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mediaDetails {
+  .background {
+    padding-bottom: 47.82%;
+    position: relative;
+    min-height: 100vh;
+    z-index: 0;
+    display: block;
+
+    @include tablet() {
+      padding-bottom: 70%;
+    }
+
+    @include phone() {
+      padding-bottom: 100%;
+    }
+
+    .image {
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        object-fit: cover;
+      }
+    }
+
+    & > div:first-child:not(.image) {
+      top: 0;
+      left: 0;
+      transform: unset;
+      background-position: center;
+    }
+  }
+
+  .background {
+    &::before {
+      position: absolute;
+      top: 0;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 7rem;
+      background: 7rem;
+      z-index: 1;
+
+      @include tabletDown {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 20%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 1, 54, 0) 0%,
+        $bg-color 100%
+      );
+
+      @include tabletDown() {
+        top: 0;
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0) 40%,
+            $bg-color 100%
+          ),
+          linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, $bg-color 100%);
+      }
+    }
+  }
+
+  .playInfoWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    box-shadow: none;
+    z-index: 2;
+  }
+
+  .poster {
+    position: absolute;
+    border-radius: 5px;
+    height: 434px;
+    width: auto;
+    z-index: 2;
+    bottom: -120px;
+    right: 64px;
+  }
+}
+
+.mediaMainInfo {
+  position: absolute;
+  left: 64px;
+  bottom: 120px;
+  margin-top: 4px;
+  margin-bottom: 14px;
+  color: $primary-text;
+  z-index: 1000;
+
+  h1 {
+    margin: 12px 0 -4px 0;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 0;
+    color: $primary;
+  }
+
+  h2 {
+    padding-right: 10px;
+    margin-bottom: 0;
+    letter-spacing: 0;
+    opacity: 1;
+  }
+
+  p {
+    margin-top: 1px;
+    opacity: 0.77;
+    font-weight: lighter;
+    letter-spacing: 0.6px;
+  }
+}
+
+.mediaAdditionalInfo {
+  padding-left: 64px;
+}
+
+.mediaAdditionalList {
+  margin-top: 58px;
+  padding-left: 0;
+  list-style: none;
+  padding-inline-start: 0px;
+
+
+  &Item {
+    margin-bottom: -14px;
+    display: flex;
+    align-items: baseline;
+
+    h3 {
+      font-size: inherit;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    p {
+      font-size: inherit;
+      font-weight: lighter;
+
+      span {
+        text-transform: capitalize;
+      }
+      span:not(:last-child):after {
+        content: ", ";
+      }
+    }
+
+    h3 {
+      padding-right: 50px;
+      width: 240px;
+      min-width: 240px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      @include desktopDown() {
+        padding-right: 10px;
+        width: 200px;
+        min-width: 200px;
+      }
+
+      @include phone() {
+        width: 100px;
+        min-width: 100px;
+      }
+    }
+
+    p {
+      max-width: 680px;
+    }
+  }
+}
+
+
+.description {
+  max-width: 56%;
+  font-size: inherit;
+  line-height: 30px;
+  font-weight: lighter;
+  color: $primary-text;
+}
+
+.genre {
+  font-size: 20px;
+  font-weight: 700;
+  color: $primary-text;
+}

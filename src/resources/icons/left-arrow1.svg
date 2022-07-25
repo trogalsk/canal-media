@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="95px" viewBox="0 0 50 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>6886968D-C76A-465A-83FA-19DE86AD569B</title>
+    <defs>
+        <filter x="-24.3%" y="-12.9%" width="148.6%" height="125.7%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-725.000000, -1177.000000)" fill="#FFFFFF">
+            <g id="back-copy" filter="url(#filter-1)" transform="translate(725.054100, 1177.985550)">
+                <path d="M2.58471135,52.9100756 L41.8175287,92.0810514 C43.5406696,93.8014762 46.3356302,93.8014762 48.0587711,92.0810514 C49.781912,90.3606267 49.781912,87.5710736 48.0587711,85.8506489 L9.57963977,47.432171 C9.16315551,47.0163432 9.16315551,46.3420008 9.57963977,45.9261731 L48.0457246,7.52072115 C49.7688655,5.80029638 49.7688655,3.01074335 48.0457246,1.29031858 C46.3225837,-0.430106192 43.5276231,-0.430106192 41.8044822,1.29031858 L2.58471135,40.4482685 C-0.861570452,43.889118 -0.861570452,49.4692261 2.58471135,52.9100756" id="back"></path>
+            </g>
+        </g>
+    </g>
+</svg>

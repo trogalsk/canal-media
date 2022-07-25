@@ -1,0 +1,73 @@
+@import "../../styles/utils";
+@import "../../styles/variables";
+
+.image {
+  background-size: cover;
+  -moz-background-size: cover; /* Firefox 3.6 */
+  background-position: top; /* Internet Explorer 7/8 */
+  background-repeat: no-repeat;
+  position: relative;
+
+  @include phone {
+    background: linear-gradient(
+      90deg,
+      to top,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(255, 255, 255, 0) 50%
+    );
+
+    box-shadow: inset 0 -45px 19px -9px $bg-color;
+  }
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ratio11 {
+  padding-top: 100%;
+}
+
+.ratio169 {
+  padding-top: 56.25%;
+}
+
+.ratio167 {
+  padding-top: 43.75%;
+}
+
+.ratio166 {
+  padding-top: 37.5%;
+}
+
+.ratio165 {
+  padding-top: 31.25%;
+}
+
+.ratio43 {
+  padding-top: 75%;
+}
+
+.ratio32 {
+  padding-top: 66.66%;
+}
+
+.ratio85 {
+  padding-top: 62.5%;
+}
+
+.ratio2023 {
+  padding-top: 115%;
+}
