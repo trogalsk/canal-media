@@ -28,9 +28,11 @@ To make eslint errors visible, run:
 ```
 yarn lint
 ```
+* Note: there are three warnings left in the code
+
 To format the whole code, run:
 ```
-yarn code
+yarn format
 ```
 
 ### Unit tests
@@ -50,3 +52,11 @@ Redux Toolkit to setup application store
 
 - `react-slick` and `slick-carousel`
 To render media lists
+
+## Additional possibilities
+
+* Thanks to the use of the NextJS framework, it is possible to use server side rendering (SSR) to improve the SEO of the application.
+
+* Eslint can be used in Continuous Integration system (CI) to validate the application code.
+
+* Add Husky to improve commits

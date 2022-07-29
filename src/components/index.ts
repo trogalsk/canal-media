@@ -1,4 +1,3 @@
-export * from "./Counter";
 export * from "./AppHeader";
 export * from "./AppFooter";
 export * from "./ListComponent";
